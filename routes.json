@@ -1,0 +1,6 @@
+{
+  "/api/": "/",
+  "/blog/:resource/:id/show": "/:resource/:id",
+  "/blog/:category": "/nfts?category=:category",
+  "/blog/:category2": "/deed?category=:category"
+}
