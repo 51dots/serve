@@ -6,8 +6,8 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 
-const hostname = 'amidb.andromaverse.io'; 
-const port = process.env.PORT || 80;
+const hostname = '50.116.40.90'; 
+const port = process.env.PORT || 8080;
 
 server.listen(port, hostname, () => {
   console.log(`JSON Server is running on http://${hostname}:${port}`);
