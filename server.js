@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 
-const hostname = 'localhost'; 
+const hostname = '50.116.40.90'; 
 const port = process.env.PORT || 80;
 
 server.listen(port, hostname, () => {
