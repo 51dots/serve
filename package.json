@@ -1,27 +1,30 @@
 {
-  "name": "approutes",
+  "name": "",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next export && npx thirdweb@latest upload out",
-    "start": "node server.js"
+    "export": "next build && next export -o dist"
   },
   "dependencies": {
-    "next": "^13",
-    "react": "^18.2",
-    "react-dom": "^18.2"
+    "eslint-config-next": "13.0.3",
+    "framer-motion": "^7.6.7",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/json-server": "^0.14.4",    
-    "@types/node": "^18.11.11",
-    "@types/react": "^18",
-    "concurrently": "^8.2.0",
-    "eslint": "^8.29.0",
-    "eslint-config-next": "^13",
-    "json-server": "^0.17.3",
-    "typescript": "^4.9.4"
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
   }
 }
