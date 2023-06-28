@@ -1,0 +1,23 @@
+import fs from 'fs';
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { address } = req.body;
+
+  if (!address) {
+    res.status(400).json({ error: 'Address is required' });
+    return;
+  }
+
+  const data = { address };
+  const jsonData = JSON.stringify(data);
+
+  try {
+    fs.writeFileSync('db.json', jsonData);
+    console.log('Address successfully written to db.json');
+    res.status(200).json({ message: 'Address successfully written to db.json' });
+  } catch (error) {
+    console.error('Error writing address to db.json:', error);
+    res.status(500).json({ error: 'Failed to write address to db.json' });
+  }
+}
