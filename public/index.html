@@ -10,19 +10,24 @@
     <h1>Routes in the Database:</h1>
     <ul id="routes"></ul>
     <script>
-      window
-        .fetch('https://vm-six.vercel.app/api/data')
-        .then((response) => response.json())
-        .then((data) => {
-          const routes = Object.keys(data);
-          const routesList = document.getElementById('routes');
-          routes.forEach((route) => {
-            const li = document.createElement('li');
-            li.textContent = route;
-            routesList.appendChild(li);
-          });
-        })
-        .catch((error) => console.error(error));
+      const routesData = {
+        "/": "/",
+        "/blog/:resource/:id/show": "/:resource/:id",
+        "/blog/:category": "/nfts?category=:category",
+        "/blog/:category2": "/and?category=:category",
+        "/blog/:category3": "/deed?category=:category",
+        "/blog/:category4": "/alysians?category=:category",
+      };
+
+      const routesList = document.getElementById("routes");
+      Object.entries(routesData).forEach(([route, destination]) => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = destination;
+        link.textContent = route;
+        li.appendChild(link);
+        routesList.appendChild(li);
+      });
     </script>
   </body>
 </html>
