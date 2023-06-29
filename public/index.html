@@ -1,5 +1,28 @@
 <html>
-<body>
-<img src="https://andromaverse.cloud/assets/images/game.gif" alt="mint" width={22} height={22} />
-</body>
+  <head>
+    <style>
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Routes in the Database:</h1>
+    <ul id="routes"></ul>
+    <script>
+      window
+        .fetch('https://vm-six.vercel.app/api/data')
+        .then((response) => response.json())
+        .then((data) => {
+          const routes = Object.keys(data);
+          const routesList = document.getElementById('routes');
+          routes.forEach((route) => {
+            const li = document.createElement('li');
+            li.textContent = route;
+            routesList.appendChild(li);
+          });
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
 </html>
