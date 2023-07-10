@@ -1,8 +1,0 @@
-{
-  "/": "/",
-  "/blog/:resource/:id/show": "/:resource/:id",
-  "/blog/:category": "/nfts?category=:category",
-  "/blog/:category2": "/and?category=:category",
-  "/blog/:category3": "/deed?category=:category",
-  "/blog/:category4": "/alysians?category=:category"
-}
